@@ -4,9 +4,37 @@ if(anchor) {
 }
 console.log(anchor.href);
 
-//const form = document.querySelector('form')!;
+//const form = document.querySelector('form')!; // ovo hvata prvu formu
+// const form = document.querySelector('form.new-item-form')!; // Element again
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
-console.log(form.children);
+
+const formAll = document.querySelectorAll('form.new-item-form') as unknown;
+
+// console.log(form.children);
+
+// console.log(formAll);
+
+// console.log("=======================================")
+// formAll.forEach((element: any) => {
+//   console.log(element.childNodes)
+//   element.childNodes.forEach((element:any) => {
+//     console.log(element)
+//   });
+// });
+// console.log("=======================================")
+
+// console.log('-----------------------------------')
+// form.childNodes.forEach((element: any) => {
+//   console.log(element)
+// });
+// console.log('-----------------------------------')
+// form.childNodes.forEach((element: any) => {
+//   // console.log(element)
+//   element.childNodes.forEach((element: any) => {
+//     console.log(element.id)
+//   });
+// });
+// console.log('-----------------------------------')
 
 // inputs
 const type = document.querySelector('#type') as HTMLInputElement;
@@ -16,6 +44,24 @@ const amount = document.querySelector('#amount') as HTMLInputElement;
 
 form.addEventListener('submit', (e: Event) => {
   e.preventDefault();
+
+  let typeTest: string = '';
+
+  console.log(form)
+  form.childNodes.forEach((element:any) => {
+    // console.log(element.children)
+    element.childNodes.forEach((element:any) => {
+      if(element.id === 'type'){
+        typeTest = element.value
+      }
+      console.log(element.id)
+      console.log(element.value)
+    });
+  });
+
+  console.log('===============================')
+  console.log(typeTest);
+  console.log('===============================')
 
   console.log(
     type.value, 
