@@ -1,9 +1,10 @@
 // let greet: Function;
 
-// example 1
+// example 1 - ovo je potpis, i sada funkcija koja se dodeli "greet"-u mora da ima taj redosled da "a" i "b" budu string
 let greet: (a: string, b: string) => void;
 
 greet = (name: string, greeting: string) => {
+  // greet = (name, greeting) => { // i ovako moze bez greske
   console.log(`${name} says ${greeting}`);
 }
 

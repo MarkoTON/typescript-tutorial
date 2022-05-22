@@ -1,9 +1,10 @@
 "use strict";
 // let greet: Function;
-// example 1
+// example 1 - ovo je potpis, i sada funkcija koja se dodeli "greet"-u mora da ima taj redosled da "a" i "b" budu string
 var greet;
 greet = function (name, greeting) {
-    console.log(name + " says " + greeting);
+    // greet = (name, greeting) => { // i ovako moze bez greske
+    console.log("".concat(name, " says ").concat(greeting));
 };
 // example 2
 var calc;
@@ -18,5 +19,5 @@ calc = function (numOne, numTwo, action) {
 // example 3
 var logDetails;
 logDetails = function (ninja) {
-    console.log(ninja.name + " is " + ninja.age + " years old");
+    console.log("".concat(ninja.name, " is ").concat(ninja.age, " years old"));
 };
