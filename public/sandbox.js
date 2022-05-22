@@ -6,6 +6,14 @@
 // greet = () => {
 //   console.log('hello, again');
 // }
+var logDetails = function (uid, item) {
+    // const logDetails = (uid: string | number, item: string) => {
+    console.log("".concat(item, " has a uid of ").concat(uid));
+};
+var greet = function (user) {
+    // const greet = (user: {name: string, uid: string | number}) => {
+    console.log("".concat(user.name, " says hello"));
+};
 var add = function (a, b, c /*?*/) {
     if (c === void 0) { c /*?*/ = 10; }
     console.log(a + b);
