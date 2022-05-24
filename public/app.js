@@ -10,7 +10,7 @@ var Invoice = /** @class */ (function () {
         this.amount = amount;
     }
     Invoice.prototype.format = function () {
-        return this.client + " owes \u00A3" + this.amount + " for " + this.details;
+        return "".concat(this.client, " owes \u00A3").concat(this.amount, " for ").concat(this.details);
     };
     return Invoice;
 }());
@@ -20,6 +20,7 @@ var invoices = [];
 invoices.push(invOne);
 invoices.push(invTwo);
 invoices.forEach(function (inv) {
+    console.log(inv);
     console.log(inv.client, /*inv.details,*/ inv.amount, inv.format());
 });
 var form = document.querySelector('.new-item-form');
