@@ -21,7 +21,11 @@ const invTwo = new Invoice('luigi', 'work on the luigi website', 300);
 let invoices: Invoice[] = [];
 invoices.push(invOne)
 invoices.push(invTwo);
+invoices.push(new Invoice('Metallica', 'work on the Metallica website', 300));
 // invoices.push({ name: 'shaun' });
+invOne.client = 'Nirvana'
+invoices[1].client = 'Megadeth'
+invoices[2].client = 'Sepultura'
 
 console.log(invoices);
 

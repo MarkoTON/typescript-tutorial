@@ -7,7 +7,7 @@ var Invoice = /** @class */ (function () {
         this.amount = a;
     }
     Invoice.prototype.format = function () {
-        return this.client + " owes \u00A3" + this.amount + " for " + this.details;
+        return "".concat(this.client, " owes \u00A3").concat(this.amount, " for ").concat(this.details);
     };
     return Invoice;
 }());
@@ -16,7 +16,11 @@ var invTwo = new Invoice('luigi', 'work on the luigi website', 300);
 var invoices = [];
 invoices.push(invOne);
 invoices.push(invTwo);
+invoices.push(new Invoice('Metallica', 'work on the Metallica website', 300));
 // invoices.push({ name: 'shaun' });
+invOne.client = 'Nirvana';
+invoices[1].client = 'Megadeth';
+invoices[2].client = 'Sepultura';
 console.log(invoices);
 var form = document.querySelector('.new-item-form');
 console.log(form.children);
