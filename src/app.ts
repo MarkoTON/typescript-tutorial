@@ -2,15 +2,22 @@ import { Invoice } from './classes/Invoice.js';
 import { Payment } from './classes/Payment.js';
 import { HasFormatter } from './interfaces/HasFormatter.js';
 
-// let docOne: HasFormatter;
+// Ne razumem razlog za dodavanje idalje. Mora dublje da se istrazi
+// Sta god da se ugradi u ove varijable mora da sadrzi HasFormatter. Sto znaci ako se pojavi neka nova klasa i ona mora da sadrzi HasFormatter kao i Invoice i Payment
+let docOne: HasFormatter;
 // let docTwo: HasFormatter;
+let docTwo;
 
-// docOne = new Invoice('yoshi', 'web work', 250);
-// docTwo = new Payment('mario', 'plumbing', 200);
+docOne = new Invoice('yoshi', 'web work', 250);
+docTwo = new Payment('mario', 'plumbing', 200);
 
-// let docs: HasFormatter[] = [];
-// docs.push(docOne);
-// docs.push(docTwo);
+console.log(docOne);
+console.log(docTwo);
+
+// Ako zelimo array koju u sebi sadrzi objekte koji imaju HasFormatter onda to ovako uslovljavamo
+let docs: HasFormatter[] = [];
+docs.push(docOne);
+docs.push(docTwo);
 
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
 console.log(form.children);
@@ -30,5 +37,6 @@ form.addEventListener('submit', (e: Event) => {
   } else {
     doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
   }
+  console.log('========= doc ================')
   console.log(doc);
 });
